@@ -1,0 +1,34 @@
+Aplicação de Filtro de Desfoque (Gaussian Blur)
+
+O que é?
+O filtro de desfoque (Gaussian Blur) suaviza uma imagem ao calcular uma média ponderada dos pixels ao redor de cada ponto. O desfoque é controlado pelo tamanho do kernel, que define a área ao redor de cada pixel a ser considerada.
+
+Por que é útil?
+O desfoque reduz ruídos e detalhes finos da imagem, sendo útil para pré-processamento em tarefas como detecção de bordas ou segmentação de objetos.
+
+Exemplo detalhado:
+
+import cv2
+# Carregar a imagem
+imagem = cv2.imread("python3.png")
+print(imagem.shape)
+# Aplicar um filtro de desfoque
+blur = cv2.GaussianBlur(imagem, (35, 35), 0)
+# Mostrar a imagem original e a imagem borrada
+cv2.imshow("Imagem", imagem)
+cv2.imshow("Imagem Borrada", blur)
+# Esperar o usuário pressionar uma tecla antes de fechar
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explicação:
+
+-cv2.imread("python3.png"): Carrega a imagem "python3.png" como uma matriz de pixels.
+-print(imagem.shape): Exibe as dimensões da imagem carregada (altura, largura e número de canais de cor).
+-cv2.GaussianBlur(imagem, (35, 35), 0): Aplica o filtro Gaussian Blur.
+-(35, 35): Tamanho do kernel, ou seja, a área usada para calcular o desfoque. Quanto maior o kernel, mais borrada será a imagem.
+-0: Sigma calculado automaticamente com base no kernel.
+-cv2.imshow("Imagem", imagem): Exibe a imagem original em uma janela.
+-cv2.imshow("Imagem Borrada", blur): Exibe a versão borrada da imagem.
+-cv2.waitKey(0): Aguarda indefinidamente até que uma tecla seja pressionada.
+-cv2.destroyAllWindows(): Fecha todas as janelas abertas pelo OpenCV.

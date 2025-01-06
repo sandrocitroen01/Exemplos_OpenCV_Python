@@ -1,0 +1,25 @@
+Detecção de Bordas com o Algoritmo Canny
+
+O que é?
+O Canny é um algoritmo que identifica bordas de objetos em uma imagem ao detectar mudanças abruptas na intensidade de brilho.
+
+Por que é útil?
+A detecção de bordas é fundamental para diversas aplicações, como reconhecimento de formas, segmentação de objetos e visão computacional.
+
+Exemplo detalhado:
+
+import cv2
+imagem = cv2.imread("python.jpg")
+print(imagem.shape)
+bordas = cv2.Canny(imagem, 50, 150)
+cv2.imshow("imagem", imagem)
+cv2.imshow("Bordas Detectadas", bordas)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+Explicação:
+
+-cv2.Canny(imagem_cinza, 50, 150): Aplica o algoritmo Canny na imagem em tons de cinza.
+-50: Limiar inferior para detectar bordas.
+-150: Limiar superior para detectar bordas.

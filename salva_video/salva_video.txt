@@ -1,0 +1,22 @@
+Gravação de Vídeo em Tempo Real com OpenCV
+
+O que é?
+Este código utiliza a biblioteca OpenCV para capturar vídeo da câmera do computador, exibi-lo em tempo real e salvá-lo em um arquivo de vídeo no formato AVI.
+
+Por que é útil?
+Esse processo é essencial para criar sistemas de monitoramento, análise de vídeo ou gravação em tempo real para aplicações como segurança, aprendizado de máquina ou vídeo streaming.
+
+import cv2  
+video = cv2.VideoCapture(0)
+quatrocc = cv2.VideoWriter_fourcc(*'XVID')
+salvar = cv2.VideoWriter('meu_video.avi', quatrocc, 20.0, (640, 480))
+while True:
+    ret, frame = video.read()  
+    salvar.write(frame)  
+    cv2.imshow("Gravando", frame)  
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break  
+video.release()  
+salvar.release()  
+cv2.destroyAllWindows()  
+

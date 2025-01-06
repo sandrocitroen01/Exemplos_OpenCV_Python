@@ -1,0 +1,32 @@
+Redimensionar uma Imagem
+
+O que é?
+
+Redimensionar uma imagem altera suas dimensões (altura e largura) sem modificar seu conteúdo visual. Isso é feito para ajustar imagens a um tamanho específico.
+
+Por que é útil?
+Útil para uniformizar o tamanho das imagens antes de aplicá-las em algoritmos de processamento, como redes neurais, que requerem entradas de tamanhos fixos.
+
+Exemplo detalhado:
+
+import cv2
+imagem = cv2.imread("python3.png")
+print(imagem.shape)
+imagem_redimensionada = cv2.resize(imagem, (200, 200))
+print(imagem_redimensionada.shape)
+cv2.imshow("Imagem", imagem)
+cv2.imshow("Imagem Redimensionada", imagem_redimensionada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explicação:
+
+-cv2.imread("python3.png"): Carrega a imagem "python3.png".
+-print(imagem.shape): Mostra as dimensões da imagem original.
+--cv2.resize(imagem, (200, 200)): Redimensiona a imagem para 200x200 pixels.
+-print(imagem_redimensionada.shape): Confirma o novo tamanho da imagem redimensionada.
+-cv2.imshow("Imagem", imagem): Exibe a imagem original em uma janela.
+-cv2.imshow("Imagem Redimensionada", imagem_redimensionada): Mostra a imagem redimensionada.
+-cv2.waitKey(0): Aguarda uma tecla ser pressionada.
+-cv2.destroyAllWindows(): Fecha todas as janelas abertas.
+'

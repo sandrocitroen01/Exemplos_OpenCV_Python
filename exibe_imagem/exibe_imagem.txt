@@ -1,0 +1,24 @@
+Carregar e Exibir uma Imagem
+
+O que é?
+Este processo permite carregar uma imagem de um arquivo e exibi-la em uma janela usando o OpenCV. A imagem é representada como uma matriz de pixels, onde cada pixel possui valores que definem sua cor.
+
+Por que é útil?
+É o ponto de partida para o processamento de imagens. Você pode verificar se a imagem foi carregada corretamente e visualizar suas propriedades básicas, como dimensões e formato.
+
+Exemplo detalhado:
+
+import cv2
+imagem = cv2.imread("sua_imagem.jpg")  
+print(imagem.shape)
+cv2.imshow("Janela de Imagem", imagem)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explicação:
+
+-cv2.imread("python.jpg"): Carrega a imagem "python.jpg" e a representa como uma matriz.
+-print(imagem.shape): Exibe as dimensões da imagem (altura, largura e canais de cor).
+-cv2.imshow("Janela de Imagem", imagem): Abre uma janela intitulada "Janela de Imagem" para exibir a imagem.
+-cv2.waitKey(0): Aguarda indefinidamente até que uma tecla seja pressionada.
+-cv2.destroyAllWindows(): Fecha todas as janelas abertas pelo OpenCV.

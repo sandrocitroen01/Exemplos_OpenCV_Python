@@ -1,0 +1,28 @@
+Detecção e Desenho de Contornos
+
+O que é?
+A função cv2.findContours detecta os contornos (bordas contínuas) de objetos em uma imagem binária, enquanto cv2.drawContours desenha os contornos detectados na imagem original ou em outra matriz.
+
+Por que é útil?
+A detecção de contornos é usada em análise de formas, reconhecimento de padrões e rastreamento de objetos.
+
+Exemplo detalhado:
+
+import cv2 
+imagem = cv2.imread("python2.png")
+print(imagem.shape)
+cv2.imshow("imagem", imagem)
+imagem_cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
+bordas = cv2.Canny(imagem_cinza, 50, 150)
+contornos, _ = cv2.findContours(bordas, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+cv2.drawContours(imagem, contornos, -1, (0, 255, 0), 2)
+cv2.imshow("Contornos", imagem)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explicação:
+
+-cv2.findContours(bordas, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE): Encontra os contornos na imagem binária.
+-cv2.RETR_EXTERNAL: Captura apenas os contornos externos.
+-cv2.CHAIN_APPROX_SIMPLE: Reduz os pontos redundantes armazenados para representar o contorno.
+-cv2.drawContours(imagem, contornos, -1, (0, 255, 0), 2): Desenha todos os contornos (-1) na imagem original usando a cor verde (0, 255, 0) e espessura de 2 pixels.

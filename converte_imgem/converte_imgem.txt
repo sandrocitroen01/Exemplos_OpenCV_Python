@@ -1,0 +1,28 @@
+Conversão para Escala de Cinza
+
+O que é?
+Converter uma imagem para escala de cinza reduz sua complexidade, pois cada pixel terá apenas uma intensidade de brilho, em vez de três valores de cor (RGB).
+
+Por que é útil?
+Muitas aplicações de visão computacional, como detecção de bordas ou reconhecimento de padrões, funcionam melhor em imagens em escala de cinza.
+
+Exemplo detalhado:
+
+import cv2
+imagem = cv2.imread("python2.png")
+print(imagem.shape)
+imagem_cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Imagem", imagem)
+cv2.imshow("Imagem em Cinza", imagem_cinza)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explicação:
+
+-cv2.imread("python2.png"): Carrega a imagem "python2.png".
+-print(imagem.shape): Mostra as dimensões da imagem original.
+-cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY): Converte a imagem de BGR (padrão de cor do OpenCV) para escala de cinza.
+-cv2.imshow("Imagem", imagem): Exibe a imagem original em uma janela.
+-cv2.imshow("Imagem em Cinza", imagem_cinza): Exibe a versão em escala de cinza.
+-cv2.waitKey(0): Aguarda uma tecla ser pressionada.
+-cv2.destroyAllWindows(): Fecha todas as janelas abertas.
